@@ -3,9 +3,14 @@ class PostsController < ApplicationController
     @posts = Post.includes(:user).order(:created_at)
   end
 
-  def new; end
+  def new
+    @post = Post.new
+  end
 
-  def create; end
+  def create
+    post = current_user.posts.create!(post_params)
+    redirect_to post
+  end
 
   def show; end
 
