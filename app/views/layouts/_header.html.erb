@@ -1,10 +1,50 @@
-<% if user_signed_in? %>
-  <%= link_to "一覧ページ", root_path %>
-  <%= link_to "新規投稿ページ", new_post_path %>
-  <%= link_to "アカウント編集", edit_user_registration_path %>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-  <%= "【ログイン中のアドレス】#{current_user.email}" %>
-<% else %>
-  <%= link_to "新規登録", new_user_registration_path %>
-  <%= link_to "ログイン", new_user_session_path %>
-<% end %>
+<nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="#">世界遺産学習アプリ</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          国別リスト
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">アジア</a>
+          <a class="dropdown-item" href="#">オセアニア</a>
+          <a class="dropdown-item" href="#">ヨーロッパ</a>
+          <a class="dropdown-item" href="#">アフリカ</a>
+          <a class="dropdown-item" href="#">北米</a>
+          <a class="dropdown-item" href="#">南米</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          遺産クイズ
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">3級編</a>
+          <a class="dropdown-item" href="#">2級編</a>
+          <a class="dropdown-item" href="#">1級編</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          マイページ
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">メモ</a>
+          <a class="dropdown-item" href="#">進捗管理</a>
+          <a class="dropdown-item" href="#">アカウント編集</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">ログアウト</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
