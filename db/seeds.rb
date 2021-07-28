@@ -9,11 +9,9 @@ user1 = User.create!(email: 'satou@example.com', password: 'password')
 user2 = User.create!(email: 'suzuki@example.com', password: 'password')
 user3 = User.create!(email: 'tanaka@example.com', password: 'password')
 
-user2.posts.create!(content: '沖縄そば')
-user1.posts.create!(content: '海ぶどう')
-user3.posts.create!(content: 'ゴーヤーチャンプルー')
-user3.posts.create!(content: 'サーターアンダギー')
-user1.posts.create!(content: 'タコライス')
+Post.create!(content: 'おはよう', title: '挨拶', user_id: user2.id)
+Post.create!(content: 'ペンギン', title: '動物', user_id: user3.id)
+Post.create!(content: 'バスケットボール', title: '球技', user_id: user3.id)
 
 # ログイン時に使用するアカウント（変数への代入は不要）
 User.create!(email: email, password: password)
